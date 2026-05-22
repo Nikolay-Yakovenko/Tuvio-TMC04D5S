@@ -1,0 +1,187 @@
+name: Multicooker Tuvio (TMC04D5S)
+products:
+  - id: 79obna5z5vz9ru7d
+    manufacturer: Tuya/Yandex
+    model: TMC04D5S    
+entities:
+  - entity: switch
+    icon: "mdi:power"
+    translation_key: switch_x
+    translation_placeholders:
+      x: "Питание"
+    class: switch
+    dps:
+      - id: 1
+        type: boolean
+        name: switch
+  - entity: switch
+    icon: "mdi:power-cycle"
+    translation_key: switch_x
+    translation_placeholders:
+      x: "Старт"
+    class: switch
+    dps:
+      - id: 2
+        type: boolean
+        name: switch
+  - entity: switch
+    icon: "mdi:lock"
+    name: Замок от детей
+    class: switch
+    category: config
+    dps:
+      - id: 37
+        type: boolean
+        name: switch
+  - entity: switch
+    icon: "mdi:heat-wave"
+    name: Подогрев
+    class: switch
+    category: config
+    dps:
+      - id: 101
+        type: boolean
+        name: switch
+  - entity: switch
+    icon: "mdi:volume-mute"
+    name: "Отключение звука"
+    class: switch
+    category: config
+    dps:
+      - id: 102
+        type: boolean
+        name: switch
+  - entity: number
+    icon: "mdi:av-timer"
+    name: Задержка включения
+    category: config
+    dps:
+      - id: 5
+        name: value
+        type: integer
+        unit: min
+        range:
+          min: 0
+          max: 1440
+        mapping:
+          - step: 1
+
+  - entity: number
+    icon: "mdi:clock-time-three-outline"
+    name: Установка времени приготовления
+    category: config
+    dps:
+        - id: 6
+          name: value
+          type: integer
+          unit: min
+          range:
+            min: 0
+            max: 720
+          mapping:
+            - step: 1
+
+  - entity: number
+    icon: "mdi:temperature-celsius"
+    name: Температура (°C)
+    category: config
+    dps:
+        - id: 18
+          name: value
+          type: integer
+          unit: "C"
+          range:
+            min: 35
+            max: 160
+          mapping:
+            - step: 1
+
+  - entity: number
+    icon: "mdi:clock-outline"
+    name: Время готовки
+    readonly: true
+    category: config
+    dps:
+        - id: 103
+          name: value
+          type: integer
+          unit: min
+          range:
+            min: 0
+            max: 1440
+          mapping:
+            - step: 1
+
+  - entity: sensor
+    name: Статус
+    class: enum
+    category: diagnostic
+    dps:
+        - id: 9
+          type: string
+          name: sensor
+          mapping:
+            - dps_val: standby
+              value: Ожидание
+            - dps_val: selectting
+              value: Выбор
+            - dps_val: appointment
+              value: Подготовка
+            - dps_val: cooking
+              value: Приготовление
+            - dps_val: warm
+              value: Подогрев
+            - dps_val: done
+              value: Сделано
+            - dps_val: preheat
+              value: Предварительный нагрев
+  - entity: select
+    translation_key: Cooking Mode
+    category: config
+    dps:
+      - id: 3
+        type: string
+        name: option
+        mapping:
+          - dps_val: REHEAT
+            value: Разогрев
+          - dps_val: EXPRESS
+            value: Рис
+          - dps_val: RICE
+            value: Крупы
+          - dps_val: SOUP
+            value: Суп
+          - dps_val: STEAM
+            value: Пар
+          - dps_val: BOIL
+            value: Варка
+          - dps_val: STEW
+            value: Тушение
+          - dps_val: SLOW_COOK
+            value: Томление
+          - dps_val: FRY
+            value: Жарка
+          - dps_val: BAKE
+            value: Выпечка
+          - dps_val: PIZZA
+            value: Пицца
+          - dps_val: PLIAF
+            value: Плов
+          - dps_val: YOGURT
+            value: Йогурт
+          - dps_val: BREAD
+            value: Хлеб
+          - dps_val: PASTA
+            value: Паста
+          - dps_val: MILK_PORRIGE
+            value: Каша
+          - dps_val: VACUUM
+            value: СуВид
+          - dps_val: CAKE
+            value: Чизкейк
+          - dps_val: DUMPLING
+            value: Пельмени
+          - dps_val: DEEP_FRY
+            value: Фритюр
+          - dps_val: DIY
+            value: Рецепт
