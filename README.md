@@ -27,7 +27,7 @@ triggers:
     trigger: homeassistant
 conditions: []
 actions:
-  - action: shell_command.copy_file_to_tuya_local_devices2
+  - action: shell_command.copy_file_to_tuya_local_devices
     metadata: {}
     data: {}
 mode: single
