@@ -8,7 +8,7 @@
 
 Т.к. при обновлении интеграции сначала удаляются все файлы yaml, то можно добавить команду на восстановление файла ```multicooker_tuvio_tmc04d5s.yaml```
 
-Для этого надо в файле ```configuration.yaml``` сделать раздел ```shell_command```, и прописать там команду на копирование. Сам файл yaml надо положить в папку ```config\custom_components\```
+Для этого надо в файле ```configuration.yaml``` сделать раздел ```shell_command```, и прописать там команду на копирование. Сам файл ```multicooker_tuvio_tmc04d5s.yaml``` надо положить в папку ```config\custom_components\```
 
 ```yaml
 shell_command:
